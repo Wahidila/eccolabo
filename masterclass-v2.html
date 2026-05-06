@@ -211,9 +211,11 @@
     .ec8-btn--compact {
       font-size: 17px;
       padding: 20px 48px;
-      white-space: nowrap;
+      white-space: normal;
+      word-wrap: break-word;
       display: block;
       width: 100%;
+      max-width: 100%;
     }
 
     .ec8-btn--full {
@@ -332,7 +334,7 @@
       text-transform: uppercase;
       letter-spacing: 2px;
       color: var(--color-text-medium);
-      margin-bottom: 32px;
+      margin-bottom: 32px !important;
     }
 
     /* ============================================
