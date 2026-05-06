@@ -761,46 +761,53 @@
        ============================================ */
     .ec8-audience {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      max-width: 900px;
-      margin: 0 auto 40px auto;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto 50px auto;
     }
 
-    .ec8-audience__card {
-      padding: 35px;
+    .ec8-audience__item {
+      text-align: center;
+      padding: 40px 25px;
       background: var(--color-white);
       border-radius: 8px;
       border: 1px solid var(--color-border);
+      transition: all 0.3s ease;
     }
 
-    .ec8-audience__card h5 {
-      font-size: 18px;
+    .ec8-audience__item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .ec8-audience__icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background-color: rgba(35, 108, 228, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px auto;
+      color: var(--color-blue);
+      font-size: 26px;
+    }
+
+    .ec8-audience__item h5 {
+      font-family: var(--font-heading);
+      font-size: 16px;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       color: var(--color-navy);
-      margin-bottom: 20px;
-      padding-bottom: 15px;
-      border-bottom: 2px solid var(--color-blue);
+      margin-bottom: 12px;
     }
 
-    .ec8-audience__card ul {
-      list-style: none;
-    }
-
-    .ec8-audience__card ul li {
-      font-size: 16px;
+    .ec8-audience__item p {
+      font-size: 15px;
       line-height: 1.6;
-      padding: 10px 0;
       color: var(--color-text-body);
-    }
-
-    .ec8-audience__card ul li::before {
-      content: '•';
-      color: var(--color-blue);
-      font-weight: 700;
-      margin-right: 10px;
     }
 
     .ec8-audience__note {
@@ -880,26 +887,62 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 30px;
-      max-width: 700px;
+      max-width: 800px;
       margin: 0 auto;
     }
 
     .ec8-format__item {
       text-align: center;
-      padding: 30px;
+      padding: 40px 30px;
+      background: var(--color-light-gray);
+      border-radius: 8px;
+      border: 1px solid var(--color-border);
+      transition: all 0.3s ease;
+    }
+
+    .ec8-format__item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .ec8-format__icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background-color: var(--color-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px auto;
+      color: var(--color-white);
+      font-size: 26px;
     }
 
     .ec8-format__item h5 {
+      font-family: var(--font-heading);
       font-size: 18px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      margin-bottom: 10px;
+      color: var(--color-navy);
+      margin-bottom: 12px;
     }
 
     .ec8-format__item p {
       font-size: 16px;
       line-height: 1.6;
+      color: var(--color-text-body);
+    }
+
+    .ec8-format__highlight {
+      display: inline-block;
+      margin-top: 12px;
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--color-blue);
     }
 
     /* ============================================
@@ -921,7 +964,7 @@
        APPLICATION FORM
        ============================================ */
     .ec8-form-section {
-      max-width: 700px;
+      max-width: 750px;
       margin: 0 auto;
     }
 
@@ -933,18 +976,54 @@
     .ec8-form-section__intro p {
       font-size: 17px;
       color: var(--color-text-body);
+      line-height: 1.7;
     }
 
     .ec8-form {
       display: flex;
       flex-direction: column;
-      gap: 25px;
+      gap: 0;
+    }
+
+    .ec8-form__card {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      padding: 35px 40px;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .ec8-form__card:hover {
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .ec8-form__card-title {
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--color-blue);
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .ec8-form__card-title i {
+      font-size: 16px;
     }
 
     .ec8-form__group {
       display: flex;
       flex-direction: column;
       gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .ec8-form__group:last-child {
+      margin-bottom: 0;
     }
 
     .ec8-form__row {
@@ -953,9 +1032,13 @@
       gap: 20px;
     }
 
+    .ec8-form__row .ec8-form__group {
+      margin-bottom: 0;
+    }
+
     .ec8-form__label {
       font-family: var(--font-heading);
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -963,24 +1046,25 @@
     }
 
     .ec8-form__label--numbered {
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 700;
       color: var(--color-text-dark);
       text-transform: none;
       letter-spacing: 0;
+      line-height: 1.4;
     }
 
     .ec8-form__input,
     .ec8-form__select,
     .ec8-form__textarea {
       width: 100%;
-      padding: 16px 20px;
+      padding: 14px 18px;
       font-family: var(--font-body);
-      font-size: 16px;
+      font-size: 15px;
       color: var(--color-text-dark);
       background: var(--color-light-gray);
       border: 1px solid var(--color-border);
-      border-radius: 6px;
+      border-radius: 8px;
       transition: var(--transition);
       outline: none;
     }
@@ -989,7 +1073,8 @@
     .ec8-form__select:focus,
     .ec8-form__textarea:focus {
       border-color: var(--color-blue);
-      box-shadow: 0 0 0 3px rgba(35, 108, 228, 0.1);
+      background: var(--color-white);
+      box-shadow: 0 0 0 3px rgba(35, 108, 228, 0.08);
     }
 
     .ec8-form__textarea {
@@ -998,10 +1083,10 @@
     }
 
     .ec8-form__radio-group {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 10px;
-      padding-left: 5px;
+      padding: 0;
     }
 
     .ec8-form__radio {
@@ -1009,8 +1094,18 @@
       align-items: center;
       gap: 10px;
       cursor: pointer;
-      font-size: 16px;
+      font-size: 15px;
       color: var(--color-text-body);
+      padding: 12px 16px;
+      background: var(--color-light-gray);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .ec8-form__radio:hover {
+      border-color: var(--color-blue);
+      background: rgba(35, 108, 228, 0.03);
     }
 
     .ec8-form__radio input[type="radio"] {
@@ -1020,8 +1115,15 @@
       cursor: pointer;
     }
 
+    .ec8-form__radio input[type="radio"]:checked + span,
+    .ec8-form__radio:has(input:checked) {
+      color: var(--color-navy);
+      border-color: var(--color-blue);
+      background: rgba(35, 108, 228, 0.05);
+    }
+
     .ec8-form__submit {
-      margin-top: 20px;
+      margin-top: 10px;
     }
 
     /* ============================================
@@ -1149,6 +1251,10 @@
       .ec8-differentiators {
         grid-template-columns: 1fr 1fr;
       }
+
+      .ec8-audience {
+        grid-template-columns: 1fr 1fr;
+      }
     }
 
     @media (max-width: 767px) {
@@ -1217,6 +1323,14 @@
 
       .ec8-form__row {
         grid-template-columns: 1fr;
+      }
+
+      .ec8-form__radio-group {
+        grid-template-columns: 1fr;
+      }
+
+      .ec8-form__card {
+        padding: 25px 20px;
       }
 
       .ec8-btn--large {
@@ -1564,21 +1678,47 @@
         <div class="ec8-section__divider"></div>
       </div>
       <div class="ec8-audience">
-        <div class="ec8-audience__card ec8-fade-in">
-          <h5>Entrepreneurs & Operators</h5>
-          <ul>
-            <li>Entrepreneurs entering the recycling sector</li>
-            <li>Waste management operators</li>
-            <li>Industrial project developers</li>
-          </ul>
+        <div class="ec8-audience__item ec8-fade-in">
+          <div class="ec8-audience__icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h5>Entrepreneurs</h5>
+          <p>Entering the recycling sector with a real business plan</p>
         </div>
-        <div class="ec8-audience__card ec8-fade-in">
-          <h5>Manufacturing & Capital</h5>
-          <ul>
-            <li>Manufacturers diversifying into recycled materials</li>
-            <li>Investors building circular infrastructure</li>
-            <li>Government or regional initiatives</li>
-          </ul>
+        <div class="ec8-audience__item ec8-fade-in">
+          <div class="ec8-audience__icon">
+            <i class="fas fa-trash-can"></i>
+          </div>
+          <h5>Waste Operators</h5>
+          <p>Scaling waste management into industrial-grade operations</p>
+        </div>
+        <div class="ec8-audience__item ec8-fade-in">
+          <div class="ec8-audience__icon">
+            <i class="fas fa-helmet-safety"></i>
+          </div>
+          <h5>Project Developers</h5>
+          <p>Building industrial recycling infrastructure from the ground up</p>
+        </div>
+        <div class="ec8-audience__item ec8-fade-in">
+          <div class="ec8-audience__icon">
+            <i class="fas fa-industry"></i>
+          </div>
+          <h5>Manufacturers</h5>
+          <p>Diversifying into recycled materials and circular production</p>
+        </div>
+        <div class="ec8-audience__item ec8-fade-in">
+          <div class="ec8-audience__icon">
+            <i class="fas fa-chart-pie"></i>
+          </div>
+          <h5>Investors</h5>
+          <p>Building circular economy infrastructure with impact capital</p>
+        </div>
+        <div class="ec8-audience__item ec8-fade-in">
+          <div class="ec8-audience__icon">
+            <i class="fas fa-landmark"></i>
+          </div>
+          <h5>Government Initiatives</h5>
+          <p>Regional programs driving sustainable industrial development</p>
         </div>
       </div>
       <p class="ec8-audience__note">If your objective is to build a real operation - not a hobby workshop - this program is designed for you.</p>
@@ -1638,13 +1778,21 @@
         <div class="ec8-section__divider"></div>
       </div>
       <div class="ec8-format">
-        <div class="ec8-format__item">
+        <div class="ec8-format__item ec8-fade-in">
+          <div class="ec8-format__icon">
+            <i class="fas fa-calendar-check"></i>
+          </div>
           <h5>Practical Implementation</h5>
-          <p>6-week structured program focused on real implementation.</p>
+          <p>Structured program focused on real implementation, not theory.</p>
+          <span class="ec8-format__highlight">6 Weeks</span>
         </div>
-        <div class="ec8-format__item">
+        <div class="ec8-format__item ec8-fade-in">
+          <div class="ec8-format__icon">
+            <i class="fas fa-users"></i>
+          </div>
           <h5>Limited Cohort</h5>
-          <p>Limited seats per cohort. Application required.</p>
+          <p>Exclusive seats per cohort to ensure quality mentorship.</p>
+          <span class="ec8-format__highlight">Application Required</span>
         </div>
       </div>
     </div>
@@ -1682,135 +1830,151 @@
         </div>
 
         <form class="ec8-form" action="#" method="post">
-          <!-- Basic Info -->
-          <div class="ec8-form__row">
+          <!-- Card 1: Personal Info -->
+          <div class="ec8-form__card">
+            <div class="ec8-form__card-title">
+              <i class="fas fa-user"></i> Personal Information
+            </div>
+            <div class="ec8-form__row" style="margin-bottom: 20px;">
+              <div class="ec8-form__group">
+                <label class="ec8-form__label">Full Name</label>
+                <input type="text" class="ec8-form__input" name="full_name" placeholder="Your full name" required>
+              </div>
+              <div class="ec8-form__group">
+                <label class="ec8-form__label">Email</label>
+                <input type="email" class="ec8-form__input" name="email" placeholder="your@email.com" required>
+              </div>
+            </div>
+            <div class="ec8-form__row">
+              <div class="ec8-form__group">
+                <label class="ec8-form__label">WhatsApp (with country code)</label>
+                <input type="tel" class="ec8-form__input" name="whatsapp" placeholder="+62 812 3456 7890" required>
+              </div>
+              <div class="ec8-form__group">
+                <label class="ec8-form__label">Country</label>
+                <input type="text" class="ec8-form__input" name="country" placeholder="Your country" required>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: About You -->
+          <div class="ec8-form__card">
+            <div class="ec8-form__card-title">
+              <i class="fas fa-clipboard-question"></i> About You
+            </div>
             <div class="ec8-form__group">
-              <label class="ec8-form__label">Full Name</label>
-              <input type="text" class="ec8-form__input" name="full_name" placeholder="Your full name" required>
+              <label class="ec8-form__label ec8-form__label--numbered">1. What best describes you?</label>
+              <div class="ec8-form__radio-group">
+                <label class="ec8-form__radio">
+                  <input type="radio" name="describes_you" value="entrepreneur" required>
+                  Entrepreneur / business owner
+                </label>
+                <label class="ec8-form__radio">
+                  <input type="radio" name="describes_you" value="investor">
+                  Investor
+                </label>
+                <label class="ec8-form__radio">
+                  <input type="radio" name="describes_you" value="waste_management">
+                  Waste management professional
+                </label>
+                <label class="ec8-form__radio">
+                  <input type="radio" name="describes_you" value="engineer">
+                  Engineer / technical background
+                </label>
+                <label class="ec8-form__radio">
+                  <input type="radio" name="describes_you" value="student">
+                  Student / early stage
+                </label>
+                <label class="ec8-form__radio">
+                  <input type="radio" name="describes_you" value="other">
+                  Other
+                </label>
+              </div>
+            </div>
+
+            <div class="ec8-form__group" style="margin-top: 25px;">
+              <label class="ec8-form__label ec8-form__label--numbered">2. What interests you most about this program?</label>
+              <div class="ec8-form__radio-group">
+                <label class="ec8-form__radio">
+                  <input type="radio" name="interest" value="starting_factory" required>
+                  Starting a recycling factory
+                </label>
+                <label class="ec8-form__radio">
+                  <input type="radio" name="interest" value="expanding">
+                  Expanding an existing business
+                </label>
+                <label class="ec8-form__radio">
+                  <input type="radio" name="interest" value="learning_model">
+                  Learning the recycling model
+                </label>
+                <label class="ec8-form__radio">
+                  <input type="radio" name="interest" value="investment">
+                  Exploring investment opportunities
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Your Project -->
+          <div class="ec8-form__card">
+            <div class="ec8-form__card-title">
+              <i class="fas fa-industry"></i> Your Project
             </div>
             <div class="ec8-form__group">
-              <label class="ec8-form__label">Email</label>
-              <input type="email" class="ec8-form__input" name="email" placeholder="your@email.com" required>
+              <label class="ec8-form__label ec8-form__label--numbered">3. Are you considering building a recycling micro-factory in the next:</label>
+              <div class="ec8-form__radio-group">
+                <label class="ec8-form__radio">
+                  <input type="radio" name="timeline" value="6_months" required>
+                  6 months
+                </label>
+                <label class="ec8-form__radio">
+                  <input type="radio" name="timeline" value="12_months">
+                  12 months
+                </label>
+                <label class="ec8-form__radio">
+                  <input type="radio" name="timeline" value="2_plus_years">
+                  2+ years
+                </label>
+                <label class="ec8-form__radio">
+                  <input type="radio" name="timeline" value="exploring">
+                  Just exploring
+                </label>
+              </div>
+            </div>
+
+            <div class="ec8-form__group" style="margin-top: 25px;">
+              <label class="ec8-form__label ec8-form__label--numbered">4. If the right project is identified, would you be able to invest in a factory?</label>
+              <div class="ec8-form__radio-group">
+                <label class="ec8-form__radio">
+                  <input type="radio" name="invest" value="yes" required>
+                  Yes
+                </label>
+                <label class="ec8-form__radio">
+                  <input type="radio" name="invest" value="possibly">
+                  Possibly
+                </label>
+                <label class="ec8-form__radio">
+                  <input type="radio" name="invest" value="not_yet">
+                  Not yet
+                </label>
+              </div>
+            </div>
+
+            <div class="ec8-form__group" style="margin-top: 25px;">
+              <label class="ec8-form__label ec8-form__label--numbered">5. What country would the project be located in?</label>
+              <input type="text" class="ec8-form__input" name="project_country" placeholder="Country for your project">
             </div>
           </div>
 
-          <div class="ec8-form__row">
+          <!-- Card 4: Additional -->
+          <div class="ec8-form__card">
+            <div class="ec8-form__card-title">
+              <i class="fas fa-message"></i> Additional
+            </div>
             <div class="ec8-form__group">
-              <label class="ec8-form__label">WhatsApp Number (with country code)</label>
-              <input type="tel" class="ec8-form__input" name="whatsapp" placeholder="+62 812 3456 7890" required>
+              <label class="ec8-form__label ec8-form__label--numbered">6. Anything you'd like to share about your project or motivation?</label>
+              <textarea class="ec8-form__textarea" name="motivation" placeholder="Tell us about your project or motivation..."></textarea>
             </div>
-            <div class="ec8-form__group">
-              <label class="ec8-form__label">Country</label>
-              <input type="text" class="ec8-form__input" name="country" placeholder="Your country" required>
-            </div>
-          </div>
-
-          <!-- Question 1 -->
-          <div class="ec8-form__group">
-            <label class="ec8-form__label ec8-form__label--numbered">1. What best describes you?</label>
-            <div class="ec8-form__radio-group">
-              <label class="ec8-form__radio">
-                <input type="radio" name="describes_you" value="entrepreneur" required>
-                Entrepreneur / business owner
-              </label>
-              <label class="ec8-form__radio">
-                <input type="radio" name="describes_you" value="investor">
-                Investor
-              </label>
-              <label class="ec8-form__radio">
-                <input type="radio" name="describes_you" value="waste_management">
-                Waste management professional
-              </label>
-              <label class="ec8-form__radio">
-                <input type="radio" name="describes_you" value="engineer">
-                Engineer / technical background
-              </label>
-              <label class="ec8-form__radio">
-                <input type="radio" name="describes_you" value="student">
-                Student / early stage
-              </label>
-              <label class="ec8-form__radio">
-                <input type="radio" name="describes_you" value="other">
-                Other
-              </label>
-            </div>
-          </div>
-
-          <!-- Question 2 -->
-          <div class="ec8-form__group">
-            <label class="ec8-form__label ec8-form__label--numbered">2. What interests you most about this program?</label>
-            <div class="ec8-form__radio-group">
-              <label class="ec8-form__radio">
-                <input type="radio" name="interest" value="starting_factory" required>
-                Starting a recycling factory
-              </label>
-              <label class="ec8-form__radio">
-                <input type="radio" name="interest" value="expanding">
-                Expanding an existing recycling business
-              </label>
-              <label class="ec8-form__radio">
-                <input type="radio" name="interest" value="learning_model">
-                Learning the recycling manufacturing model
-              </label>
-              <label class="ec8-form__radio">
-                <input type="radio" name="interest" value="investment">
-                Exploring investment opportunities
-              </label>
-            </div>
-          </div>
-
-          <!-- Question 3 -->
-          <div class="ec8-form__group">
-            <label class="ec8-form__label ec8-form__label--numbered">3. Are you considering building a recycling micro-factory in the next:</label>
-            <div class="ec8-form__radio-group">
-              <label class="ec8-form__radio">
-                <input type="radio" name="timeline" value="6_months" required>
-                6 months
-              </label>
-              <label class="ec8-form__radio">
-                <input type="radio" name="timeline" value="12_months">
-                12 months
-              </label>
-              <label class="ec8-form__radio">
-                <input type="radio" name="timeline" value="2_plus_years">
-                2+ years
-              </label>
-              <label class="ec8-form__radio">
-                <input type="radio" name="timeline" value="exploring">
-                Just exploring
-              </label>
-            </div>
-          </div>
-
-          <!-- Question 4 -->
-          <div class="ec8-form__group">
-            <label class="ec8-form__label ec8-form__label--numbered">4. If the right project is identified, would you be able to invest in a factory?</label>
-            <div class="ec8-form__radio-group">
-              <label class="ec8-form__radio">
-                <input type="radio" name="invest" value="yes" required>
-                Yes
-              </label>
-              <label class="ec8-form__radio">
-                <input type="radio" name="invest" value="possibly">
-                Possibly
-              </label>
-              <label class="ec8-form__radio">
-                <input type="radio" name="invest" value="not_yet">
-                Not yet
-              </label>
-            </div>
-          </div>
-
-          <!-- Question 5 -->
-          <div class="ec8-form__group">
-            <label class="ec8-form__label ec8-form__label--numbered">5. What country would the project be located in?</label>
-            <input type="text" class="ec8-form__input" name="project_country" placeholder="Country for your project">
-          </div>
-
-          <!-- Question 6 -->
-          <div class="ec8-form__group">
-            <label class="ec8-form__label ec8-form__label--numbered">6. Anything you'd like to share about your project or motivation?</label>
-            <textarea class="ec8-form__textarea" name="motivation" placeholder="Tell us about your project or motivation..."></textarea>
           </div>
 
           <!-- Submit -->
