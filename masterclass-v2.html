@@ -57,7 +57,7 @@
     }
 
     .ec8-masterclass img {
-      max-width: 100%;
+      max-width: 50%;
       height: auto;
     }
 
@@ -332,7 +332,7 @@
       text-transform: uppercase;
       letter-spacing: 2px;
       color: var(--color-text-medium);
-      margin-bottom: 35px;
+      margin-bottom: 32px;
     }
 
     /* ============================================
@@ -363,16 +363,16 @@
     }
 
     .ec8-proof__icon {
-      width: 56px;
-      height: 56px;
-      min-width: 56px;
+      width: 64px;
+      height: 64px;
+      min-width: 64px;
       border-radius: 50%;
       background-color: var(--color-blue);
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--color-white);
-      font-size: 20px;
+      font-size: 26px;
     }
 
     .ec8-proof__content h5 {
@@ -408,16 +408,16 @@
     }
 
     .ec8-feature__icon {
-      width: 50px;
-      height: 50px;
-      min-width: 50px;
+      width: 58px;
+      height: 58px;
+      min-width: 58px;
       border-radius: 50%;
       background-color: rgba(35, 108, 228, 0.1);
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--color-blue);
-      font-size: 18px;
+      font-size: 24px;
     }
 
     .ec8-feature__content h5 {
@@ -522,8 +522,8 @@
     }
 
     .ec8-curriculum__icon {
-      width: 70px;
-      height: 70px;
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
       background-color: var(--color-blue);
       display: flex;
@@ -531,7 +531,7 @@
       justify-content: center;
       margin: 0 auto 25px auto;
       color: var(--color-white);
-      font-size: 24px;
+      font-size: 30px;
     }
 
     .ec8-curriculum__card h5 {
@@ -710,13 +710,21 @@
     .ec8-outcome__item i {
       color: var(--color-blue);
       margin-top: 3px;
-      font-size: 14px;
+      font-size: 18px;
     }
 
     .ec8-outcome__item span {
       font-size: 16px;
       color: rgba(255, 255, 255, 0.85);
       line-height: 1.5;
+    }
+
+    .ec8-outcome__item--center {
+      grid-column: 1 / -1;
+      justify-self: center;
+      max-width: calc(50% - 10px);
+      width: 100%;
+      justify-content: center;
     }
 
     .ec8-outcome__footer {
@@ -827,8 +835,8 @@
     }
 
     .ec8-differentiator__icon {
-      width: 50px;
-      height: 50px;
+      width: 58px;
+      height: 58px;
       border-radius: 50%;
       background: rgba(35, 108, 228, 0.1);
       display: flex;
@@ -836,7 +844,7 @@
       justify-content: center;
       margin: 0 auto 18px auto;
       color: var(--color-blue);
-      font-size: 18px;
+      font-size: 24px;
     }
 
     .ec8-differentiator h5 {
@@ -1518,7 +1526,7 @@
           <i class="fas fa-check"></i>
           <span>Unit economics and profitability structure</span>
         </div>
-        <div class="ec8-outcome__item">
+        <div class="ec8-outcome__item ec8-outcome__item--center">
           <i class="fas fa-check"></i>
           <span>Clear launch roadmap</span>
         </div>
