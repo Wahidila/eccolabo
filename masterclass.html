@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECOLLABO8 MASTERCLASS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    /* ============================================
+       ECOLLABO8 MASTERCLASS — Custom Page Template
+       Self-contained CSS (scoped via .ec8-masterclass)
+       Brand Colors: #000000, #1E2654, #236CE4
+       Fonts: Montserrat (headings), Open Sans (body)
+       ============================================ */
+
+    .ec8-masterclass {
+      --color-black: #000000;
+      --color-navy: #1E2654;
+      --color-blue: #236CE4;
+      --color-white: #FFFFFF;
+      --color-light-gray: #F5F5F5;
+      --color-text-dark: #222222;
+      --color-text-body: #666666;
+      --color-text-medium: #777777;
+      --color-border: #EEEEEE;
+      --font-heading: 'Montserrat', sans-serif;
+      --font-body: 'Open Sans', sans-serif;
+      --container-width: 1180px;
+      --section-padding: 100px;
+      --transition: all 0.3s ease;
+
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--color-text-body);
+      overflow-x: hidden;
+    }
+
+    .ec8-masterclass *,
+    .ec8-masterclass *::before,
+    .ec8-masterclass *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    .ec8-masterclass img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Container */
+    .ec8-container {
+      max-width: var(--container-width);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .ec8-container--narrow {
+      max-width: 800px;
+    }
+
+    /* Section Base */
+    .ec8-section {
+      padding: var(--section-padding) 0;
+      position: relative;
+    }
+
+    .ec8-section--white {
+      background-color: var(--color-white);
+    }
+
+    .ec8-section--light {
+      background-color: var(--color-light-gray);
+    }
+
+    .ec8-section--navy {
+      background-color: var(--color-navy);
+    }
+
+    .ec8-section--black {
+      background-color: var(--color-black);
+    }
+
+    .ec8-section--navy .ec8-section__title,
+    .ec8-section--navy .ec8-section__subtitle,
+    .ec8-section--navy p,
+    .ec8-section--navy li,
+    .ec8-section--black .ec8-section__title,
+    .ec8-section--black .ec8-section__subtitle,
+    .ec8-section--black p,
+    .ec8-section--black li {
+      color: var(--color-white);
+    }
+
+    .ec8-section--navy p,
+    .ec8-section--navy li,
+    .ec8-section--black p,
+    .ec8-section--black li {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* Section Title */
+    .ec8-section__header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 60px auto;
+    }
+
+    .ec8-section__title {
+      font-family: var(--font-heading);
+      font-size: 32px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--color-text-dark);
+      margin-bottom: 20px;
+    }
+
+    .ec8-section__divider {
+      width: 60px;
+      height: 3px;
+      background-color: var(--color-blue);
+      margin: 0 auto 25px auto;
+    }
+
+    .ec8-section__subtitle {
+      font-family: var(--font-body);
+      font-size: 16px;
+      color: var(--color-text-body);
+      line-height: 1.7;
+    }
+
+    /* Typography */
+    .ec8-masterclass h1,
+    .ec8-masterclass h2,
+    .ec8-masterclass h3,
+    .ec8-masterclass h4,
+    .ec8-masterclass h5 {
+      font-family: var(--font-heading);
+      color: var(--color-text-dark);
+      line-height: 1.3;
+    }
+
+    .ec8-masterclass p {
+      margin-bottom: 15px;
+    }
+
+    .ec8-masterclass p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Buttons */
+    .ec8-btn {
+      display: inline-block;
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 16px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+      text-align: center;
+    }
+
+    .ec8-btn--primary {
+      background-color: var(--color-blue);
+      color: var(--color-white);
+    }
+
+    .ec8-btn--primary:hover {
+      background-color: var(--color-navy);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(35, 108, 228, 0.3);
+    }
+
+    .ec8-btn--outline {
+      background: transparent;
+      color: var(--color-white);
+      border: 2px solid var(--color-white);
+    }
+
+    .ec8-btn--outline:hover {
+      background-color: var(--color-white);
+      color: var(--color-navy);
+    }
+
+    .ec8-btn--large {
+      font-size: 15px;
+      padding: 18px 42px;
+    }
+
+    .ec8-btn--full {
+      display: block;
+      width: 100%;
+    }
+
+    /* ============================================
+       HERO SECTION
+       ============================================ */
+    .ec8-hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background-color: var(--color-black);
+      position: relative;
+      overflow: hidden;
+      padding: 120px 20px;
+    }
+
+    .ec8-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse at 50% 50%, rgba(35, 108, 228, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .ec8-hero__content {
+      max-width: 900px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .ec8-hero__label {
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--color-blue);
+      margin-bottom: 30px;
+      display: inline-block;
+    }
+
+    .ec8-hero__title {
+      font-family: var(--font-heading);
+      font-size: 56px;
+      font-weight: 800;
+      color: var(--color-white);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      line-height: 1.1;
+      margin-bottom: 30px;
+    }
+
+    .ec8-hero__title span {
+      color: var(--color-blue);
+    }
+
+    .ec8-hero__description {
+      font-size: 17px;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.8;
+      max-width: 750px;
+      margin: 0 auto 40px auto;
+    }
+
+    /* ============================================
+       PROGRAM DELIVERS SECTION
+       ============================================ */
+    .ec8-delivers {
+      text-align: center;
+    }
+
+    .ec8-delivers__text {
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--color-text-dark);
+      max-width: 700px;
+      margin: 0 auto 15px auto;
+      line-height: 1.6;
+    }
+
+    .ec8-delivers__text strong {
+      color: var(--color-blue);
+    }
+
+    .ec8-delivers__tagline {
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--color-text-medium);
+      margin-bottom: 35px;
+    }
+
+    /* ============================================
+       PROOF SECTION
+       ============================================ */
+    .ec8-proof {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .ec8-proof__item {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 30px;
+      background: var(--color-white);
+      border-radius: 8px;
+      border: 1px solid var(--color-border);
+      transition: var(--transition);
+    }
+
+    .ec8-proof__item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    }
+
+    .ec8-proof__icon {
+      width: 56px;
+      height: 56px;
+      min-width: 56px;
+      border-radius: 50%;
+      background-color: var(--color-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-white);
+      font-size: 20px;
+    }
+
+    .ec8-proof__content h5 {
+      font-size: 16px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .ec8-proof__content p {
+      font-size: 14px;
+      color: var(--color-text-body);
+      line-height: 1.6;
+    }
+
+    /* ============================================
+       WHY EXISTS / FEATURE GRID
+       ============================================ */
+    .ec8-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .ec8-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 30px;
+    }
+
+    .ec8-feature__icon {
+      width: 50px;
+      height: 50px;
+      min-width: 50px;
+      border-radius: 50%;
+      background-color: rgba(35, 108, 228, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-blue);
+      font-size: 18px;
+    }
+
+    .ec8-feature__content h5 {
+      font-size: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+
+    .ec8-feature__content p {
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* ============================================
+       FULL STORY (NARRATIVE SECTION)
+       ============================================ */
+    .ec8-narrative {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .ec8-narrative p {
+      font-size: 17px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .ec8-narrative p strong {
+      color: var(--color-white);
+      font-weight: 700;
+    }
+
+    .ec8-narrative p em {
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* ============================================
+       OPPORTUNITY SECTION
+       ============================================ */
+    .ec8-opportunity {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .ec8-opportunity__card {
+      padding: 40px;
+      background: var(--color-white);
+      border-radius: 8px;
+      border-top: 4px solid var(--color-blue);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    }
+
+    .ec8-opportunity__card h5 {
+      font-size: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 15px;
+      color: var(--color-navy);
+    }
+
+    .ec8-opportunity__card p {
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .ec8-opportunity__card strong {
+      color: var(--color-text-dark);
+    }
+
+    /* ============================================
+       CURRICULUM / WHAT YOU WILL LEARN
+       ============================================ */
+    .ec8-curriculum {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .ec8-curriculum__card {
+      padding: 40px 30px;
+      background: var(--color-white);
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      transition: var(--transition);
+      border: 1px solid var(--color-border);
+    }
+
+    .ec8-curriculum__card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .ec8-curriculum__icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background-color: var(--color-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 25px auto;
+      color: var(--color-white);
+      font-size: 24px;
+    }
+
+    .ec8-curriculum__card h5 {
+      font-size: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
+    }
+
+    .ec8-curriculum__card ul {
+      list-style: none;
+      text-align: left;
+    }
+
+    .ec8-curriculum__card ul li {
+      font-size: 14px;
+      line-height: 1.6;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--color-border);
+      color: var(--color-text-body);
+    }
+
+    .ec8-curriculum__card ul li:last-child {
+      border-bottom: none;
+    }
+
+    .ec8-curriculum__card ul li::before {
+      content: '→';
+      color: var(--color-blue);
+      font-weight: 700;
+      margin-right: 8px;
+    }
+
+    /* ============================================
+       PARTNERSHIP SECTION
+       ============================================ */
+    .ec8-partnership {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .ec8-partnership__highlight {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--color-text-dark);
+      margin-bottom: 20px;
+    }
+
+    .ec8-partnership__list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin: 30px 0;
+      text-align: left;
+    }
+
+    .ec8-partnership__list li {
+      font-size: 15px;
+      padding: 12px 15px;
+      background: rgba(35, 108, 228, 0.05);
+      border-radius: 6px;
+      border-left: 3px solid var(--color-blue);
+    }
+
+    .ec8-partnership__note {
+      font-size: 14px;
+      font-style: italic;
+      color: var(--color-text-medium);
+      margin-top: 25px;
+    }
+
+    /* ============================================
+       PROGRAM STRUCTURE / PHASES
+       ============================================ */
+    .ec8-phases {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .ec8-phase {
+      padding: 40px;
+      background: var(--color-white);
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      border: 1px solid var(--color-border);
+    }
+
+    .ec8-phase__label {
+      font-family: var(--font-heading);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--color-blue);
+      margin-bottom: 8px;
+    }
+
+    .ec8-phase__title {
+      font-family: var(--font-heading);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin-bottom: 25px;
+      text-transform: uppercase;
+    }
+
+    .ec8-phase__week {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .ec8-phase__week:last-child {
+      border-bottom: none;
+    }
+
+    .ec8-phase__week-num {
+      font-family: var(--font-heading);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--color-blue);
+      min-width: 60px;
+      text-transform: uppercase;
+    }
+
+    .ec8-phase__week-topic {
+      font-size: 14px;
+      color: var(--color-text-dark);
+      font-weight: 500;
+    }
+
+    /* ============================================
+       OUTCOME SECTION
+       ============================================ */
+    .ec8-outcome__intro {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 40px auto;
+    }
+
+    .ec8-outcome__intro p {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .ec8-outcome__intro strong {
+      color: var(--color-white);
+    }
+
+    .ec8-outcome__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto 40px auto;
+    }
+
+    .ec8-outcome__item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 15px 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .ec8-outcome__item i {
+      color: var(--color-blue);
+      margin-top: 3px;
+      font-size: 14px;
+    }
+
+    .ec8-outcome__item span {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.5;
+    }
+
+    .ec8-outcome__footer {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .ec8-outcome__footer p {
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .ec8-outcome__closing {
+      margin-top: 30px;
+    }
+
+    .ec8-outcome__closing p {
+      font-family: var(--font-heading);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--color-white);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* ============================================
+       WHO THIS IS FOR
+       ============================================ */
+    .ec8-audience {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      max-width: 900px;
+      margin: 0 auto 40px auto;
+    }
+
+    .ec8-audience__card {
+      padding: 35px;
+      background: var(--color-white);
+      border-radius: 8px;
+      border: 1px solid var(--color-border);
+    }
+
+    .ec8-audience__card h5 {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--color-navy);
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid var(--color-blue);
+    }
+
+    .ec8-audience__card ul {
+      list-style: none;
+    }
+
+    .ec8-audience__card ul li {
+      font-size: 14px;
+      line-height: 1.6;
+      padding: 8px 0;
+      color: var(--color-text-body);
+    }
+
+    .ec8-audience__card ul li::before {
+      content: '•';
+      color: var(--color-blue);
+      font-weight: 700;
+      margin-right: 10px;
+    }
+
+    .ec8-audience__note {
+      text-align: center;
+      font-size: 15px;
+      font-style: italic;
+      color: var(--color-text-medium);
+    }
+
+    /* ============================================
+       WHAT MAKES THIS DIFFERENT
+       ============================================ */
+    .ec8-differentiators {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .ec8-differentiator {
+      text-align: center;
+      padding: 30px 20px;
+      background: var(--color-white);
+      border-radius: 8px;
+      border: 1px solid var(--color-border);
+      transition: var(--transition);
+    }
+
+    .ec8-differentiator:hover {
+      border-color: var(--color-blue);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(35, 108, 228, 0.08);
+    }
+
+    .ec8-differentiator__icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(35, 108, 228, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 18px auto;
+      color: var(--color-blue);
+      font-size: 18px;
+    }
+
+    .ec8-differentiator h5 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+
+    .ec8-differentiator p {
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .ec8-differentiators__note {
+      text-align: center;
+      margin-top: 40px;
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--color-text-medium);
+    }
+
+    /* ============================================
+       PROGRAM FORMAT
+       ============================================ */
+    .ec8-format {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .ec8-format__item {
+      text-align: center;
+      padding: 30px;
+    }
+
+    .ec8-format__item h5 {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+
+    .ec8-format__item p {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* ============================================
+       PROGRAM OVERVIEW CTA SECTION
+       ============================================ */
+    .ec8-overview-cta {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .ec8-overview-cta p {
+      font-size: 16px;
+      margin-bottom: 30px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* ============================================
+       APPLICATION FORM
+       ============================================ */
+    .ec8-form-section {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .ec8-form-section__intro {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .ec8-form-section__intro p {
+      font-size: 15px;
+      color: var(--color-text-body);
+    }
+
+    .ec8-form {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .ec8-form__group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .ec8-form__row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .ec8-form__label {
+      font-family: var(--font-heading);
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--color-text-dark);
+    }
+
+    .ec8-form__label--numbered {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .ec8-form__input,
+    .ec8-form__select,
+    .ec8-form__textarea {
+      width: 100%;
+      padding: 14px 18px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: var(--color-text-dark);
+      background: var(--color-light-gray);
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      transition: var(--transition);
+      outline: none;
+    }
+
+    .ec8-form__input:focus,
+    .ec8-form__select:focus,
+    .ec8-form__textarea:focus {
+      border-color: var(--color-blue);
+      box-shadow: 0 0 0 3px rgba(35, 108, 228, 0.1);
+    }
+
+    .ec8-form__textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .ec8-form__radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-left: 5px;
+    }
+
+    .ec8-form__radio {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      font-size: 14px;
+      color: var(--color-text-body);
+    }
+
+    .ec8-form__radio input[type="radio"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--color-blue);
+      cursor: pointer;
+    }
+
+    .ec8-form__submit {
+      margin-top: 20px;
+    }
+
+    /* ============================================
+       ANIMATIONS
+       ============================================ */
+    .ec8-fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .ec8-fade-in.ec8-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============================================
+       RESPONSIVE
+       ============================================ */
+    @media (max-width: 1024px) {
+      .ec8-section {
+        padding: 80px 0;
+      }
+
+      .ec8-hero__title {
+        font-size: 42px;
+      }
+
+      .ec8-curriculum {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+      }
+
+      .ec8-differentiators {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .ec8-section {
+        padding: 60px 0;
+      }
+
+      .ec8-section__title {
+        font-size: 24px;
+        letter-spacing: 1px;
+      }
+
+      .ec8-hero {
+        min-height: 80vh;
+        padding: 100px 20px 80px;
+      }
+
+      .ec8-hero__title {
+        font-size: 32px;
+      }
+
+      .ec8-hero__description {
+        font-size: 15px;
+      }
+
+      .ec8-proof,
+      .ec8-features,
+      .ec8-opportunity,
+      .ec8-phases,
+      .ec8-audience,
+      .ec8-format {
+        grid-template-columns: 1fr;
+      }
+
+      .ec8-outcome__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ec8-differentiators {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .ec8-partnership__list {
+        grid-template-columns: 1fr;
+      }
+
+      .ec8-form__row {
+        grid-template-columns: 1fr;
+      }
+
+      .ec8-btn--large {
+        font-size: 13px;
+        padding: 16px 30px;
+      }
+
+      .ec8-delivers__text {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="ec8-masterclass">
+
+  <!-- ============================================
+       HERO SECTION
+       ============================================ -->
+  <section class="ec8-hero">
+    <div class="ec8-hero__content">
+      <span class="ec8-hero__label">Industrial Recycling Business Program</span>
+      <h1 class="ec8-hero__title">ECOLLABO8 <span>MASTERCLASS</span></h1>
+      <p class="ec8-hero__description">
+        Most recycling businesses fail because they focus on machines before markets. This program teaches you how to build a profitable recycling operation from the ground up — using real industrial data, proven production systems, and investor-grade business strategy developed through years of full-scale production experience.
+      </p>
+      <p class="ec8-hero__description" style="font-size: 14px; color: rgba(255,255,255,0.5); margin-bottom: 0;">
+        Participants developing viable projects may gain access to structured funding pathways through our partnership with Conduit Impact, a global investment network supporting scalable industrial solutions.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       WHAT THIS PROGRAM DELIVERS
+       ============================================ -->
+  <section class="ec8-section ec8-section--white">
+    <div class="ec8-container">
+      <div class="ec8-section__header">
+        <h2 class="ec8-section__title">What This Program Delivers</h2>
+        <div class="ec8-section__divider"></div>
+      </div>
+      <div class="ec8-delivers">
+        <p class="ec8-delivers__text">
+          Build a profitable, <strong>real-world recycling operation</strong> using proven industrial systems, real factory numbers, and real market demand.
+        </p>
+        <p class="ec8-delivers__tagline">Limited cohort. Practical. Business-first.</p>
+        <a href="#program-overview" class="ec8-btn ec8-btn--primary ec8-btn--large">Apply to ECOLLABO8 Masterclass</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       PROOF, NOT THEORY
+       ============================================ -->
+  <section class="ec8-section ec8-section--light">
+    <div class="ec8-container">
+      <div class="ec8-section__header">
+        <h2 class="ec8-section__title">Proof. Not Theory.</h2>
+        <div class="ec8-section__divider"></div>
+      </div>
+      <div class="ec8-proof">
+        <div class="ec8-proof__item ec8-fade-in">
+          <div class="ec8-proof__icon">
+            <i class="fas fa-industry"></i>
+          </div>
+          <div class="ec8-proof__content">
+            <h5>5+ Tons Processed Daily</h5>
+            <p>Full-scale industrial production — not a pilot project.</p>
+          </div>
+        </div>
+        <div class="ec8-proof__item ec8-fade-in">
+          <div class="ec8-proof__icon">
+            <i class="fas fa-building"></i>
+          </div>
+          <div class="ec8-proof__content">
+            <h5>Commercial Products in Use</h5>
+            <p>Construction, manufacturing, hospitality — real applications, real constraints.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       WHY THIS PROGRAM EXISTS
+       ============================================ -->
+  <section class="ec8-section ec8-section--white">
+    <div class="ec8-container">
+      <div class="ec8-section__header">
+        <h2 class="ec8-section__title">Why This Program Exists</h2>
+        <div class="ec8-section__divider"></div>
+      </div>
+      <div class="ec8-features">
+        <div class="ec8-feature ec8-fade-in">
+          <div class="ec8-feature__icon">
+            <i class="fas fa-globe"></i>
+          </div>
+          <div class="ec8-feature__content">
+            <h5>Built in the Real World</h5>
+            <p>We started with an oven and a couple of people trying to figure things out. Today, ECOLLABO8 processes over 5 tons of plastic per day.</p>
+          </div>
+        </div>
+        <div class="ec8-feature ec8-fade-in">
+          <div class="ec8-feature__icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="ec8-feature__content">
+            <h5>Business-First, Always</h5>
+            <p>We approached recycling as a business first — focused on market demand, real use-cases, and what clients are willing to pay for.</p>
+          </div>
+        </div>
+        <div class="ec8-feature ec8-fade-in">
+          <div class="ec8-feature__icon">
+            <i class="fas fa-cubes"></i>
+          </div>
+          <div class="ec8-feature__content">
+            <h5>Real Alternatives to Standard Materials</h5>
+            <p>Success came when we stopped trying to "revolutionize industries" and started building real alternatives to standard materials.</p>
+          </div>
+        </div>
+        <div class="ec8-feature ec8-fade-in">
+          <div class="ec8-feature__icon">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <div class="ec8-feature__content">
+            <h5>Real-World Application</h5>
+            <p>No special systems. No experimental usage. Just products that function like the materials they replace — in real projects.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       THE FULL STORY
+       ============================================ -->
+  <section class="ec8-section ec8-section--navy">
+    <div class="ec8-container">
+      <div class="ec8-section__header">
+        <h2 class="ec8-section__title">The Full Story</h2>
+        <div class="ec8-section__divider"></div>
+      </div>
+      <div class="ec8-narrative">
+        <p>Recycling has become a global trend. But building a recycling business that actually works is something very different.</p>
+        <p><strong>Over the past 7 years, we've made every possible mistake.</strong></p>
+        <p>It has been a long journey — and an important one.</p>
+        <p>After years of building, testing, failing, improving, and scaling — we are now ready to share the full system.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       WHAT THIS OPPORTUNITY IS
+       ============================================ -->
+  <section class="ec8-section ec8-section--white">
+    <div class="ec8-container">
+      <div class="ec8-section__header">
+        <h2 class="ec8-section__title">What This Opportunity Is</h2>
+        <div class="ec8-section__divider"></div>
+      </div>
+      <div class="ec8-opportunity">
+        <div class="ec8-opportunity__card ec8-fade-in">
+          <h5>A Structured Launch Framework</h5>
+          <p>Not a theoretical sustainability course. This is a practical program to build a <strong>real recycling business</strong> based on operational reality and market economics.</p>
+        </div>
+        <div class="ec8-opportunity__card ec8-fade-in">
+          <h5>Outcome-Driven</h5>
+          <p>Leave with an <strong>investor-ready business plan</strong> and a clear path to launch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       WHAT YOU WILL LEARN
+       ============================================ -->
+  <section class="ec8-section ec8-section--light">
+    <div class="ec8-container">
+      <div class="ec8-section__header">
+        <h2 class="ec8-section__title">What You Will Learn</h2>
+        <div class="ec8-section__divider"></div>
+      </div>
+      <div class="ec8-curriculum">
+        <div class="ec8-curriculum__card ec8-fade-in">
+          <div class="ec8-curriculum__icon">
+            <i class="fas fa-crosshairs"></i>
+          </div>
+          <h5>Market & Strategy</h5>
+          <ul>
+            <li>Identify viable high-demand products</li>
+            <li>Validate real market opportunities</li>
+            <li>Price for industrial profitability</li>
+            <li>Secure clients before production</li>
+          </ul>
+        </div>
+        <div class="ec8-curriculum__card ec8-fade-in">
+          <div class="ec8-curriculum__icon">
+            <i class="fas fa-gears"></i>
+          </div>
+          <h5>Industrial Operations</h5>
+          <ul>
+            <li>Design efficient factory flow</li>
+            <li>Select the right machinery</li>
+            <li>Build scalable production systems</li>
+            <li>Implement real-world operating models</li>
+          </ul>
+        </div>
+        <div class="ec8-curriculum__card ec8-fade-in">
+          <div class="ec8-curriculum__icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h5>Scale & Funding</h5>
+          <ul>
+            <li>Build investor-grade business plans</li>
+            <li>Structure expansion strategy</li>
+            <li>Access funding pathways through CONDUIT IMPACT</li>
+            <li>ECOLLABO8 worldwide network to accelerate sales</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       IN PARTNERSHIP WITH CONDUIT IMPACT
+       ============================================ -->
+  <section class="ec8-section ec8-section--white">
+    <div class="ec8-container">
+      <div class="ec8-section__header">
+        <h2 class="ec8-section__title">In Partnership with Conduit Impact</h2>
+        <div class="ec8-section__divider"></div>
+      </div>
+      <div class="ec8-partnership">
+        <p>This program is delivered in collaboration with Conduit Impact — a global investment network supporting scalable, high-impact industrial solutions.</p>
+        <p class="ec8-partnership__highlight">Every business plan will be reviewed directly by Conduit Impact, and their <strong>$100 Million Pool Fund</strong> for sustainable businesses provides direct access to:</p>
+        <ul class="ec8-partnership__list">
+          <li>Structured investment pathways</li>
+          <li>Impact-aligned capital</li>
+          <li>Factory deployment support</li>
+          <li>International scaling opportunities</li>
+        </ul>
+        <p class="ec8-partnership__note">Funding is not guaranteed. But real projects built on real economics can move forward.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       PROGRAM STRUCTURE
+       ============================================ -->
+  <section class="ec8-section ec8-section--light">
+    <div class="ec8-container">
+      <div class="ec8-section__header">
+        <h2 class="ec8-section__title">Program Structure</h2>
+        <div class="ec8-section__divider"></div>
+      </div>
+      <div class="ec8-phases">
+        <div class="ec8-phase ec8-fade-in">
+          <div class="ec8-phase__label">Phase 1</div>
+          <h4 class="ec8-phase__title">Foundation</h4>
+          <div class="ec8-phase__week">
+            <span class="ec8-phase__week-num">Week 1</span>
+            <span class="ec8-phase__week-topic">Business-First Mindset</span>
+          </div>
+          <div class="ec8-phase__week">
+            <span class="ec8-phase__week-num">Week 2</span>
+            <span class="ec8-phase__week-topic">Market Discovery & Product Strategy</span>
+          </div>
+          <div class="ec8-phase__week">
+            <span class="ec8-phase__week-num">Week 3</span>
+            <span class="ec8-phase__week-topic">Production Logic & Factory Design</span>
+          </div>
+        </div>
+        <div class="ec8-phase ec8-fade-in">
+          <div class="ec8-phase__label">Phase 2</div>
+          <h4 class="ec8-phase__title">Execution</h4>
+          <div class="ec8-phase__week">
+            <span class="ec8-phase__week-num">Week 4</span>
+            <span class="ec8-phase__week-topic">Pricing, Margins & Unit Economics</span>
+          </div>
+          <div class="ec8-phase__week">
+            <span class="ec8-phase__week-num">Week 5</span>
+            <span class="ec8-phase__week-topic">Sales Strategy & Industrial Clients</span>
+          </div>
+          <div class="ec8-phase__week">
+            <span class="ec8-phase__week-num">Week 6</span>
+            <span class="ec8-phase__week-topic">Business Plan & Funding Pathways</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       OUTCOME
+       ============================================ -->
+  <section class="ec8-section ec8-section--navy">
+    <div class="ec8-container">
+      <div class="ec8-section__header">
+        <h2 class="ec8-section__title">Outcome</h2>
+        <div class="ec8-section__divider"></div>
+      </div>
+      <div class="ec8-outcome__intro">
+        <p>By the end of the program, you will not leave with theory — <strong>you will leave with a complete, investor-ready recycling business blueprint.</strong></p>
+      </div>
+      <div class="ec8-outcome__grid">
+        <div class="ec8-outcome__item">
+          <i class="fas fa-check"></i>
+          <span>A full investor-grade business plan tailored to your target market</span>
+        </div>
+        <div class="ec8-outcome__item">
+          <i class="fas fa-check"></i>
+          <span>A validated product strategy based on real industrial demand</span>
+        </div>
+        <div class="ec8-outcome__item">
+          <i class="fas fa-check"></i>
+          <span>Factory flow design and production logic</span>
+        </div>
+        <div class="ec8-outcome__item">
+          <i class="fas fa-check"></i>
+          <span>Unit economics and profitability structure</span>
+        </div>
+        <div class="ec8-outcome__item">
+          <i class="fas fa-check"></i>
+          <span>Clear launch roadmap</span>
+        </div>
+      </div>
+      <div class="ec8-outcome__footer">
+        <p>Participants developing viable projects may gain access to structured funding pathways through Conduit Impact — including exposure to a $100M+ impact investment pool supporting scalable industrial infrastructure.</p>
+        <p style="margin-top: 15px;">You will also gain direct access to ECOLLABO8's technologies, operational systems, and supplier network — including machinery sourcing and implementation guidance.</p>
+      </div>
+      <div class="ec8-outcome__closing">
+        <p>This is not a workshop.</p>
+        <p style="color: var(--color-blue); margin-top: 5px;">It is a launch platform.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       WHO THIS IS FOR
+       ============================================ -->
+  <section class="ec8-section ec8-section--white">
+    <div class="ec8-container">
+      <div class="ec8-section__header">
+        <h2 class="ec8-section__title">Who This Is For</h2>
+        <div class="ec8-section__divider"></div>
+      </div>
+      <div class="ec8-audience">
+        <div class="ec8-audience__card ec8-fade-in">
+          <h5>Entrepreneurs & Operators</h5>
+          <ul>
+            <li>Entrepreneurs entering the recycling sector</li>
+            <li>Waste management operators</li>
+            <li>Industrial project developers</li>
+          </ul>
+        </div>
+        <div class="ec8-audience__card ec8-fade-in">
+          <h5>Manufacturing & Capital</h5>
+          <ul>
+            <li>Manufacturers diversifying into recycled materials</li>
+            <li>Investors building circular infrastructure</li>
+            <li>Government or regional initiatives</li>
+          </ul>
+        </div>
+      </div>
+      <p class="ec8-audience__note">If your objective is to build a real operation — not a hobby workshop — this program is designed for you.</p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       WHAT MAKES THIS DIFFERENT
+       ============================================ -->
+  <section class="ec8-section ec8-section--light">
+    <div class="ec8-container">
+      <div class="ec8-section__header">
+        <h2 class="ec8-section__title">What Makes This Different</h2>
+        <div class="ec8-section__divider"></div>
+      </div>
+      <div class="ec8-differentiators">
+        <div class="ec8-differentiator ec8-fade-in">
+          <div class="ec8-differentiator__icon">
+            <i class="fas fa-database"></i>
+          </div>
+          <h5>Real Industrial Data</h5>
+          <p>Real factory data and production economics — not assumptions.</p>
+        </div>
+        <div class="ec8-differentiator ec8-fade-in">
+          <div class="ec8-differentiator__icon">
+            <i class="fas fa-box-open"></i>
+          </div>
+          <h5>Real Product Use-Cases</h5>
+          <p>Real product applications, real constraints, real client expectations.</p>
+        </div>
+        <div class="ec8-differentiator ec8-fade-in">
+          <div class="ec8-differentiator__icon">
+            <i class="fas fa-file-lines"></i>
+          </div>
+          <h5>Real Case Studies</h5>
+          <p>Real client case studies, pricing logic, and go-to-market learning.</p>
+        </div>
+        <div class="ec8-differentiator ec8-fade-in">
+          <div class="ec8-differentiator__icon">
+            <i class="fas fa-truck"></i>
+          </div>
+          <h5>Real Supply Chains</h5>
+          <p>Real sourcing, logistics, and operational flow — designed for execution.</p>
+        </div>
+      </div>
+      <p class="ec8-differentiators__note">This is industrial knowledge — not theory.</p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       PROGRAM FORMAT
+       ============================================ -->
+  <section class="ec8-section ec8-section--white">
+    <div class="ec8-container">
+      <div class="ec8-section__header">
+        <h2 class="ec8-section__title">Program Format</h2>
+        <div class="ec8-section__divider"></div>
+      </div>
+      <div class="ec8-format">
+        <div class="ec8-format__item">
+          <h5>Practical Implementation</h5>
+          <p>6-week structured program focused on real implementation.</p>
+        </div>
+        <div class="ec8-format__item">
+          <h5>Limited Cohort</h5>
+          <p>Limited seats per cohort. Application required.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       PROGRAM OVERVIEW CTA
+       ============================================ -->
+  <section class="ec8-section ec8-section--black" id="program-overview">
+    <div class="ec8-container">
+      <div class="ec8-section__header">
+        <h2 class="ec8-section__title">Program Overview</h2>
+        <div class="ec8-section__divider"></div>
+      </div>
+      <div class="ec8-overview-cta">
+        <p>A 6-week fully online program focused on building real, scalable recycling businesses — from market validation to production strategy.</p>
+        <a href="#" class="ec8-btn ec8-btn--outline ec8-btn--large" target="_blank">Program Overview ECOLLABO8 – Industrial Masterclass | Cohort 02</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       APPLICATION FORM
+       ============================================ -->
+  <section class="ec8-section ec8-section--white" id="apply">
+    <div class="ec8-container">
+      <div class="ec8-section__header">
+        <h2 class="ec8-section__title">Apply to the ECOLLABO8 Masterclass</h2>
+        <div class="ec8-section__divider"></div>
+      </div>
+      <div class="ec8-form-section">
+        <div class="ec8-form-section__intro">
+          <p>If you are serious about building a recycling business — and doing it correctly from the start — apply below.</p>
+          <p>After submission, selected candidates will be contacted with program details and enrollment steps.</p>
+        </div>
+
+        <form class="ec8-form" action="#" method="post">
+          <!-- Basic Info -->
+          <div class="ec8-form__row">
+            <div class="ec8-form__group">
+              <label class="ec8-form__label">Full Name</label>
+              <input type="text" class="ec8-form__input" name="full_name" placeholder="Your full name" required>
+            </div>
+            <div class="ec8-form__group">
+              <label class="ec8-form__label">Email</label>
+              <input type="email" class="ec8-form__input" name="email" placeholder="your@email.com" required>
+            </div>
+          </div>
+
+          <div class="ec8-form__row">
+            <div class="ec8-form__group">
+              <label class="ec8-form__label">WhatsApp Number (with country code)</label>
+              <input type="tel" class="ec8-form__input" name="whatsapp" placeholder="+62 812 3456 7890" required>
+            </div>
+            <div class="ec8-form__group">
+              <label class="ec8-form__label">Country</label>
+              <input type="text" class="ec8-form__input" name="country" placeholder="Your country" required>
+            </div>
+          </div>
+
+          <!-- Question 1 -->
+          <div class="ec8-form__group">
+            <label class="ec8-form__label ec8-form__label--numbered">1. What best describes you?</label>
+            <div class="ec8-form__radio-group">
+              <label class="ec8-form__radio">
+                <input type="radio" name="describes_you" value="entrepreneur" required>
+                Entrepreneur / business owner
+              </label>
+              <label class="ec8-form__radio">
+                <input type="radio" name="describes_you" value="investor">
+                Investor
+              </label>
+              <label class="ec8-form__radio">
+                <input type="radio" name="describes_you" value="waste_management">
+                Waste management professional
+              </label>
+              <label class="ec8-form__radio">
+                <input type="radio" name="describes_you" value="engineer">
+                Engineer / technical background
+              </label>
+              <label class="ec8-form__radio">
+                <input type="radio" name="describes_you" value="student">
+                Student / early stage
+              </label>
+              <label class="ec8-form__radio">
+                <input type="radio" name="describes_you" value="other">
+                Other
+              </label>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="ec8-form__group">
+            <label class="ec8-form__label ec8-form__label--numbered">2. What interests you most about this program?</label>
+            <div class="ec8-form__radio-group">
+              <label class="ec8-form__radio">
+                <input type="radio" name="interest" value="starting_factory" required>
+                Starting a recycling factory
+              </label>
+              <label class="ec8-form__radio">
+                <input type="radio" name="interest" value="expanding">
+                Expanding an existing recycling business
+              </label>
+              <label class="ec8-form__radio">
+                <input type="radio" name="interest" value="learning_model">
+                Learning the recycling manufacturing model
+              </label>
+              <label class="ec8-form__radio">
+                <input type="radio" name="interest" value="investment">
+                Exploring investment opportunities
+              </label>
+            </div>
+          </div>
+
+          <!-- Question 3 -->
+          <div class="ec8-form__group">
+            <label class="ec8-form__label ec8-form__label--numbered">3. Are you considering building a recycling micro-factory in the next:</label>
+            <div class="ec8-form__radio-group">
+              <label class="ec8-form__radio">
+                <input type="radio" name="timeline" value="6_months" required>
+                6 months
+              </label>
+              <label class="ec8-form__radio">
+                <input type="radio" name="timeline" value="12_months">
+                12 months
+              </label>
+              <label class="ec8-form__radio">
+                <input type="radio" name="timeline" value="2_plus_years">
+                2+ years
+              </label>
+              <label class="ec8-form__radio">
+                <input type="radio" name="timeline" value="exploring">
+                Just exploring
+              </label>
+            </div>
+          </div>
+
+          <!-- Question 4 -->
+          <div class="ec8-form__group">
+            <label class="ec8-form__label ec8-form__label--numbered">4. If the right project is identified, would you be able to invest in a factory?</label>
+            <div class="ec8-form__radio-group">
+              <label class="ec8-form__radio">
+                <input type="radio" name="invest" value="yes" required>
+                Yes
+              </label>
+              <label class="ec8-form__radio">
+                <input type="radio" name="invest" value="possibly">
+                Possibly
+              </label>
+              <label class="ec8-form__radio">
+                <input type="radio" name="invest" value="not_yet">
+                Not yet
+              </label>
+            </div>
+          </div>
+
+          <!-- Question 5 -->
+          <div class="ec8-form__group">
+            <label class="ec8-form__label ec8-form__label--numbered">5. What country would the project be located in?</label>
+            <input type="text" class="ec8-form__input" name="project_country" placeholder="Country for your project">
+          </div>
+
+          <!-- Question 6 -->
+          <div class="ec8-form__group">
+            <label class="ec8-form__label ec8-form__label--numbered">6. Anything you'd like to share about your project or motivation?</label>
+            <textarea class="ec8-form__textarea" name="motivation" placeholder="Tell us about your project or motivation..."></textarea>
+          </div>
+
+          <!-- Submit -->
+          <div class="ec8-form__submit">
+            <button type="submit" class="ec8-btn ec8-btn--primary ec8-btn--large ec8-btn--full">
+              Register to ECOLLABO8 Masterclass
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- Scroll Animation Script -->
+<script>
+(function() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('ec8-visible');
+        }, index * 100);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  document.querySelectorAll('.ec8-fade-in').forEach(el => {
+    observer.observe(el);
+  });
+})();
+</script>
+
+</body>
+</html>
